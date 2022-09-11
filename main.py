@@ -10,7 +10,6 @@
 #   - Remember, functions may be higher order
 
 from enum import Enum
-from hashlib import new
 
 
 def flatten_and_sort(int_list):
@@ -37,16 +36,16 @@ print(flatten_and_sort([11, 2, [23, 14, [5]], [109, 47, [91, 16, [25]]]]))
 
 #   - How does this solution ensure data immutability? - The input list is NOT changed. The function returns a new
 
-#   - Is this solution a pure function? Why or why not? - Yes! Does not produce or rely on side effects and it's 
+#   - Is this solution a pure function? Why or why not? - Yes! Does not produce or rely on side effects and it's
 #                                                         list output purely depends on its input
 
 #   - Is this solution a higher order function? Why or why not? - It is not a higher order function because it does
-#                                                                 not take a function as input nor does return a 
+#                                                                 not take a function as input nor does return a
 #                                                                 function
 
 #   - Would it have been easier to solve this problem using a different programming style? - No
 
-#   - Why in particular is functional programming  
+#   - Why in particular is functional programming
 #     a helpful paradigm when solving this problem? - It is easier to decompose this problem into a set of functions
 
 
@@ -98,19 +97,15 @@ class AnakinsPod(Podracer):
 class SebulbasPod(Podracer):
     def __init__(self, max_speed, condition, price) -> None:
         super().__init__(max_speed, condition, price)
-    
+
     def flame_jet(self, podracer):
-        if isinstance(podracer , Podracer):
+        if isinstance(podracer, Podracer):
             podracer.condition = CONDITION.TRASHED
         else:
-          print("this method can only be used on Podracer derived types")
-
-
-
+            print("this method can only be used on Podracer derived types")
 
 
 #
-
 sp = SebulbasPod("Vicious", CONDITION.PERFECT, 10000000)
 ap = AnakinsPod("Hero", CONDITION.PERFECT, 20000000)
 
@@ -124,18 +119,22 @@ ap = AnakinsPod("Hero", CONDITION.PERFECT, 20000000)
 
 #       - Inheritance - AnakinsPod and SebulbasPod inherits name, max_speed, and condition from parent class Podracer
 
-print(f"sp is SebulbasPod -> {isinstance(sp , SebulbasPod)}")  # sp is SebulbasPod -> True
-print(f"sp is Podracer -> {isinstance(sp , Podracer)}")  #  sp is Podracer -> True
-print(f"ap is AnakinsPod -> {isinstance(ap , AnakinsPod)}")  #  ap is AnakinsPod -> True
-print(f"ap is Podracer -> {isinstance(ap , Podracer)}")  #  ap is Podracer -> True
+# sp is SebulbasPod -> True
+print(f"sp is SebulbasPod -> {isinstance(sp , SebulbasPod)}")
+# sp is Podracer -> True
+print(f"sp is Podracer -> {isinstance(sp , Podracer)}")
+# ap is AnakinsPod -> True
+print(f"ap is AnakinsPod -> {isinstance(ap , AnakinsPod)}")
+# ap is Podracer -> True
+print(f"ap is Podracer -> {isinstance(ap , Podracer)}")
 
 #       - Polymorphism - The function 'flame_jet' expects type Podracer. When calling this function we can pass in an object of type Podracer, AnakinsPod, or SebulbasPod
 
 sp.flame_jet(ap)
-print(f"ap condition -> {ap.condition}")  #  ap condition -> CONDITION.TRASHED
+print(f"ap condition -> {ap.condition}")  # ap condition -> CONDITION.TRASHED
 
 x = 10
-sp.flame_jet(x)  #  this method can only be used on Podracer derived types
+sp.flame_jet(x)  # this method can only be used on Podracer derived types
 
 #     Would it have been easier to implement a solution to this problem using a different coding style? Why or why not? - Not really, the solution would be much more complex
 
