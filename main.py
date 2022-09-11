@@ -33,10 +33,10 @@ print(flatten_and_sort([11, 2, [23, 14, [5]], [109, 47, [91, 16, [25]]]]))  #  [
 
 # Once a functional solution to this problem has been implemented, answer the following questions.
 
-#   - How does this solution ensure data immutability? - The input list is NOT changed. The function returns a new
+#   - How does this solution ensure data immutability? - The input list is NOT changed. The function returns a new list
 
 #   - Is this solution a pure function? Why or why not? - Yes! Does not produce or rely on side effects and it's
-#                                                         list output purely depends on its input
+#                                                         output purely depends on its input
 
 #   - Is this solution a higher order function? Why or why not? - It is not a higher order function because it does
 #                                                                 not take a function as input nor does return a
