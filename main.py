@@ -105,6 +105,7 @@ class SebulbasPod(Podracer):
 
 
 #
+
 sp = SebulbasPod(9, CONDITION.PERFECT, 10000000)
 ap = AnakinsPod(10, CONDITION.PERFECT, 20000000)
 
@@ -118,14 +119,11 @@ ap = AnakinsPod(10, CONDITION.PERFECT, 20000000)
 
 #       - Inheritance - AnakinsPod and SebulbasPod inherits name, max_speed, and condition from parent class Podracer
 
-# sp is SebulbasPod -> True
-print(f"sp is SebulbasPod -> {isinstance(sp , SebulbasPod)}")
-# sp is Podracer -> True
-print(f"sp is Podracer -> {isinstance(sp , Podracer)}")
-# ap is AnakinsPod -> True
-print(f"ap is AnakinsPod -> {isinstance(ap , AnakinsPod)}")
-# ap is Podracer -> True
-print(f"ap is Podracer -> {isinstance(ap , Podracer)}")
+
+print(f"sp is SebulbasPod -> {isinstance(sp , SebulbasPod)}")  #  sp is SebulbasPod -> True
+print(f"sp is Podracer -> {isinstance(sp , Podracer)}")  #  sp is Podracer -> True
+print(f"ap is AnakinsPod -> {isinstance(ap , AnakinsPod)}")  #  ap is AnakinsPod -> True
+print(f"ap is Podracer -> {isinstance(ap , Podracer)}")  #  ap is Podracer -> True
 
 #       - Polymorphism - The function 'flame_jet' expects type Podracer. When calling this function we can pass in an object of type Podracer, AnakinsPod, or SebulbasPod
 
@@ -142,6 +140,6 @@ sp.flame_jet(x)  # this method can only be used on Podracer derived types
 ap.repair()
 print(f"ap condition -> {ap.condition}")  # ap condition -> CONDITION.REPAIRED
 
-print(f"ap -> max_speed: {ap.max_speed}, condition: {ap.condition}, price: {ap.price}")
+print(f"ap -> max_speed: {ap.max_speed}, condition: {ap.condition}, price: {ap.price}")  #  ap -> max_speed: 10, condition: CONDITION.REPAIRED, price: 20000000
 ap.boost()
-print(f"ap -> max_speed: {ap.max_speed}")
+print(f"ap -> max_speed: {ap.max_speed}")  #  ap -> max_speed: 12
