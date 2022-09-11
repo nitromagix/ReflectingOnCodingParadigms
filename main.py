@@ -26,9 +26,9 @@ def flatten_and_sort(int_list):
     return sorted(new_list)
 
 
-print(flatten_and_sort([17, 4, 55, 12, 33, 8]))
-print(flatten_and_sort([2, 22, 0, 80, [47, 19]]))
-print(flatten_and_sort([11, 2, [23, 14, [5]], [109, 47, [91, 16, [25]]]]))
+print(flatten_and_sort([17, 4, 55, 12, 33, 8]))  #  [4, 8, 12, 17, 33, 55]
+print(flatten_and_sort([2, 22, 0, 80, [47, 19]]))  #  [0, 2, 19, 22, 47, 80]
+print(flatten_and_sort([11, 2, [23, 14, [5]], [109, 47, [91, 16, [25]]]]))  #  [2, 5, 11, 14, 16, 23, 25, 47, 91, 109]
 
 
 # Once a functional solution to this problem has been implemented, answer the following questions.
