@@ -81,8 +81,8 @@ class Podracer():
         self.condition = condition
         self.price = price
 
-        def repair(self):
-            self.condition = CONDITION.REPAIRED
+    def repair(self):
+        self.condition = CONDITION.REPAIRED
 
 
 class AnakinsPod(Podracer):
@@ -105,8 +105,8 @@ class SebulbasPod(Podracer):
 
 
 #
-sp = SebulbasPod("Vicious", CONDITION.PERFECT, 10000000)
-ap = AnakinsPod("Hero", CONDITION.PERFECT, 20000000)
+sp = SebulbasPod(9, CONDITION.PERFECT, 10000000)
+ap = AnakinsPod(10, CONDITION.PERFECT, 20000000)
 
 # Once an Object Oriented solution has been implemented, answer the following questions:
 
@@ -138,3 +138,10 @@ sp.flame_jet(x)  # this method can only be used on Podracer derived types
 #     Would it have been easier to implement a solution to this problem using a different coding style? Why or why not? - Not really, the solution would be much more complex
 
 #     How in particular did Object Oriented Programming assist in the solving of this problem? - Inheritance, Polymorphism
+
+ap.repair()
+print(f"ap condition -> {ap.condition}")  # ap condition -> CONDITION.REPAIRED
+
+print(f"ap -> max_speed: {ap.max_speed}, condition: {ap.condition}, price: {ap.price}")
+ap.boost()
+print(f"ap -> max_speed: {ap.max_speed}")
