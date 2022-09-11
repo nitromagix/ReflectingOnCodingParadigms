@@ -1,4 +1,3 @@
-# Author: Martin Prost
 
 # Functional Prompt
 
